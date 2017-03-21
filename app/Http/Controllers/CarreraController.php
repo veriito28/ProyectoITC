@@ -8,80 +8,23 @@ use Illuminate\Http\Request;
 class CarreraController extends Controller
 {
 
+  
     /**
-     * Display a listing of the resource.
+     * Muestra la pantalla de visualizacion de una carrera seleccionada.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
+     * El usuario le manda como parametro el id de la carrera
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * En $carrera se almacena la carrera correspondiente al id de carrera mandado
+     * como parametro
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
+     * Como en todo momento se debe mostrar la barra lateral entonces 
+     * se obtienen todas las carreras y se despliegan
      * @param  \App\Carrera  $carrera
-     * @return \Illuminate\Http\Response
+     * @return Vista carrera
      */
     public function show(Carrera $carrera)
     {
         $carreras = Carrera::get();
         return view('carrera',compact('carreras','carrera'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Carrera  $carrera
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Carrera $carrera)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Carrera  $carrera
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Carrera $carrera)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Carrera  $carrera
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Carrera $carrera)
-    {
-        //
     }
 }

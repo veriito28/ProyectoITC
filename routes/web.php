@@ -11,6 +11,19 @@
 |
 */
 
+/**
+ * Ruta principal de la aplicacion
+ * Redirige al usuario al controlador WebController 
+ * al metodo/función index
+ * Regresa la vista de principal de la aplicacion
+ */
 Route::get('/', 'WebController@index');
+
+/**
+ * Ruta para la visualizacion de una carrera seleccionada
+ * se le manda como parametro el id de la carrera 
+ * Redirige al usuario al controlador CarreraController 
+ * al metodo/función show
+ * Regresa la vista de detalle de una carrera
+ */
 Route::get('/carreras/{carrera}', 'CarreraController@show');
-Route::get('materias', 'MateriaController@index');

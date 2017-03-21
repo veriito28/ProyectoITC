@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="<?php echo e(config('app.locale')); ?>">
 <head>
@@ -11,9 +14,22 @@
     <title>Instituto Tecnológico De Culiacán</title>
 </head>
 <body>
+    
+    
     <?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php echo $__env->make('sidebar',compact('carreras'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-	<?php echo $__env->yieldContent('content'); ?>
+
+    
+    
+    
+    
+    <?php if(isset($carrera)): ?>
+        <?php echo $__env->make('sidebar',compact('carreras','carrera'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php else: ?>
+        <?php echo $__env->make('sidebar',compact('carreras'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+
+    
+ 	<?php echo $__env->yieldContent('content'); ?>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>

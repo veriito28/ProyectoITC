@@ -7,14 +7,18 @@ use App\Carrera;
 
 class WebController extends Controller
 {
-    protected $carreras;
-    function __construct(Carrera $carreras)
-    {
-    	$this->carreras = $carreras;
-    }
+    /**
+     * index
+     * Muestra la pantalla principal de la aplicacion
+     * Obtiene todas las carreras del modelo 
+     * Despues las envia a la plantilla para visualizarlas en la barra
+     * lateral
+     *
+     * @return view
+     **/
     public function index()
     {
-    	$carreras = $this->carreras->get();
+    	$carreras = Carrera::get();
     	return view('main',compact('carreras'));
     }
 }
